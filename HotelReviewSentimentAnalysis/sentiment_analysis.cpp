@@ -359,7 +359,7 @@ void displayMenu(ResizableArray<string>& positiveWords, ResizableArray<int>& pos
         case 0:
             break;
         default:
-            cout << "Invalid choice. Try again.\n";  // For numbers that are outside of valid choices
+            cout << "Invalid choice. Try again.\n"; 
         }
     } while (choice != 0);
 }
