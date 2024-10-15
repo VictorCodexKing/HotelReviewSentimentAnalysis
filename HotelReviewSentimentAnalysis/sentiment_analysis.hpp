@@ -17,7 +17,7 @@ using Ms = chrono::milliseconds;
 using Mu = chrono::microseconds;
 using Timer = chrono::high_resolution_clock;
 
-// Templated resizable array class (similar to std::vector functionality)
+// Templated resizable array class (similar to Vector functionality)
 template <typename T>
 class ResizableArray {
 private:
@@ -92,7 +92,7 @@ public:
         return -1; // Element not found
     }
 
-    // Insertion Sort by Frequency (used in the "4 - Sort words by frequency" option)
+    // Insertion Sort by Frequency 
     void insertionSort(ResizableArray<int>& frequencies) {
         for (int i = 1; i < size; i++) {
             T wordKey = data[i];

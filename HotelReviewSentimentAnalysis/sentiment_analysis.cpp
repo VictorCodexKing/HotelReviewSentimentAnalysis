@@ -64,7 +64,7 @@ void loadReviewsAndRatingsFromCSV(const string& filename, ResizableArray<string>
     file.close();
 }
 
-// Function to clear the console (works for both Windows and Unix-like systems)
+// Function to clear the console 
 void clearScreen() {
     system("cls");  // Windows command to clear the console
 }
@@ -157,11 +157,9 @@ void generateSentimentAnalysis(const ResizableArray<string>& reviews, const Resi
     // End timer
     auto end = Timer::now();
     auto duration = duration_cast<microseconds>(end - start);
-
-    // Clear the screen for smoother output
     clearScreen();
 
-    // Display results in the requested format
+    // Display results 
     cout << "Review #" << reviewNumber << "\n";
     cout << "Comment: " << review << "\n";
     cout << "\nPositive Words = " << positiveCount << "\n";
@@ -181,7 +179,7 @@ void generateSentimentAnalysis(const ResizableArray<string>& reviews, const Resi
 }
 
 
-// ** Modified Function: Sort both positive and negative words simultaneously and display the result **
+// Function to Sort both positive and negative words simultaneously and display the result
 void sortWordsByFrequency(ResizableArray<string>& positiveWords, ResizableArray<int>& posFrequencies,
     ResizableArray<string>& negativeWords, ResizableArray<int>& negFrequencies) {
 
@@ -213,7 +211,7 @@ void sortWordsByFrequency(ResizableArray<string>& positiveWords, ResizableArray<
     cout << "\nPress Enter to Continue...";
     cin.ignore(); // Ignore leftover input
     cin.get();    // Wait for enter
-    clearScreen(); // Clear the screen before returning to the main menu
+    clearScreen(); 
 }
 
 // Count occurrences in ResizableArray
@@ -241,7 +239,7 @@ void displayWordsWithOccurrences(ResizableArray<string>& words, ResizableArray<i
     cout << "Press Enter to Continue...";
     cin.ignore();  // Ignore the newline left in the buffer from the previous input
     cin.get();     // Wait for user to press Enter
-    clearScreen(); // Clear the screen before returning to the main menu
+    clearScreen(); 
 }
 
 // Count positive/negative words in review using binary search
@@ -261,7 +259,7 @@ void countWordsInReviewBinary(const string& review, const ResizableArray<string>
     }
 }
 
-// Perform Semantic Analysis (binary search-based)
+// Perform Semantic Analysis using Binary Search
 void performSemanticAnalysis(const ResizableArray<string>& reviews, const ResizableArray<string>& positiveWords, ResizableArray<int>& posCounts, const ResizableArray<string>& negativeWords, ResizableArray<int>& negCounts, int totalWords, Timer::time_point start) {
     cout << "Performing Binary Search.....\nReview #";
     for (int i = 0; i < reviews.getSize(); i++) {
@@ -282,7 +280,7 @@ void displaySummary(int totalReviews, int totalWords, int positiveWordCount, int
     cout << "Time Elapsed: " << timeElapsed.count() << " ms\n";
 }
 
-// Main menu with input validation
+// Main menu
 void displayMenu(ResizableArray<string>& positiveWords, ResizableArray<int>& posCounts, ResizableArray<string>& negativeWords, ResizableArray<int>& negCounts, ResizableArray<string>& reviews, ResizableArray<int>& userRatings, int totalWords, Ms timeElapsed) {
     string input;
     int choice = -1;  // Initialize with an invalid value
@@ -328,7 +326,7 @@ void displayMenu(ResizableArray<string>& positiveWords, ResizableArray<int>& pos
                 cin >> reviewInput;
 
                 if (reviewInput == "Q" || reviewInput == "q") {
-                    clearScreen();  // Clear screen before returning to the main menu
+                    clearScreen();  
                     break;  // Exit back to main menu
                 }
 
